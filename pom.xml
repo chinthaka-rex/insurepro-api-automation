@@ -11,20 +11,27 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <karete.version>0.9.5</karete.version>
+        <karate.version>0.9.5</karate.version>
+        <extent.version>5.0.9</extent.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.intuit.karate</groupId>
             <artifactId>karate-apache</artifactId>
-            <version>${karete.version}</version>
+            <version>${karate.version}</version>
         </dependency>
         <dependency>
             <groupId>com.intuit.karate</groupId>
             <artifactId>karate-junit4</artifactId>
-            <version>${karete.version}</version>
+            <version>${karate.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.0.9</version>
+        </dependency>
+
     </dependencies>
 
     <build>
