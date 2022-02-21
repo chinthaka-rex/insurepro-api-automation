@@ -3,23 +3,30 @@ package MyTestRunner;
 import com.intuit.karate.KarateOptions;
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
-import com.intuit.karate.Runner.Builder;
 import org.junit.Test;
+import util.ConfigReader;
 import util.ExtentReportGen;
 
+import java.util.Properties;
+
 @KarateOptions(
-        //tags = "@Smoke",
+        //tags = "@smoke",
         features = "classpath:Features"
 )
 public class TestRunner {
+    Properties prop;
+
     @Test
     public void executeKarateTest() {
-        Results result = Runner.parallel(getClass(), 2);
+        ConfigReader configReader = new ConfigReader();
+        prop = configReader.init_prop();
+
+        Results result = Runner.parallel(getClass(), Integer.parseInt(prop.getProperty("parallel_thread_count")));
 
         ExtentReportGen extentReport = new ExtentReportGen()
                 .withKarateResult(result)
                 .withReportDir("reports")
-                .withReportTitle("CW Test Automation Project");
+                .withReportTitle(prop.getProperty("extent_report_title"));
         extentReport.generateExtentReport();
     }
 }
