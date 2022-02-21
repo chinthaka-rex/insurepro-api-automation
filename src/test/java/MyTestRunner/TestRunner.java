@@ -16,7 +16,7 @@ public class TestRunner {
 
         ExtentReportGen extentReport = new ExtentReportGen()
                 .withKarateResult(result)
-                .withReportDir(result.getReportDir())
+                .withReportDir("reports")
                 .withReportTitle("CW Test Automation Project");
         extentReport.generateExtentReport();
     }
