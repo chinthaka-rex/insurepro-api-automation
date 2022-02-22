@@ -29,9 +29,8 @@
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
-            <version>5.0.9</version>
+            <version>${extent.version}</version>
         </dependency>
-
     </dependencies>
 
     <build>
