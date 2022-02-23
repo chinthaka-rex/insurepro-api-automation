@@ -7,7 +7,7 @@ import org.junit.Test;
 import util.ConfigReader;
 import util.CreateZip;
 import util.DeleteFiles;
-import util.ExtentReportGen;
+import util.ExtentReport;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -29,19 +29,18 @@ public class TestRunner {
     }
 
     public void generateExtentReport(Results result) {
-        ExtentReportGen extentReport = new ExtentReportGen()
+        CreateZip createZip = new CreateZip();
+        createZip.zipDirectory(prop.getProperty("zip_in"));
+
+        ExtentReport extentReport = new ExtentReport()
                 .withKarateResult(result)
                 .withReportDir("reports")
                 .withReportTitle(prop.getProperty("extent_report_title"));
         extentReport.generateExtentReport();
-        zippingTheReports();
-    }
 
-    public void zippingTheReports() {
         DeleteFiles deleteFiles = new DeleteFiles();
         deleteFiles.deleteThisFiles(prop.getProperty("zip_in"), ".zip");
 
-        CreateZip createZip = new CreateZip();
         try {
             createZip.zipTheFile(prop.getProperty("zip_in"), prop.getProperty("zip_out"));
         } catch (IOException e) {

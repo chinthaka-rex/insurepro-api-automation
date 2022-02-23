@@ -17,8 +17,7 @@ import com.intuit.karate.core.Result;
 import com.intuit.karate.core.ScenarioResult;
 import com.intuit.karate.core.Step;
 
-public class ExtentReportGen {
-
+public class ExtentReport {
     private ExtentReports extentReports;
     private ExtentSparkReporter extentSparkReporter;
     private String reportDir;
@@ -29,21 +28,21 @@ public class ExtentReportGen {
     private ExtentTest scenarioNode;
     private String scenarioTitle = "";
 
-    public ExtentReportGen() {
+    public ExtentReport() {
         extentReports = new ExtentReports();
     }
 
-    public ExtentReportGen withReportDir(String reportDir) {
+    public ExtentReport withReportDir(String reportDir) {
         this.reportDir = reportDir;
         return this;
     }
 
-    public ExtentReportGen withKarateResult(Results testResults) {
+    public ExtentReport withKarateResult(Results testResults) {
         this.testResults = testResults;
         return this;
     }
 
-    public ExtentReportGen withReportTitle(String reportTitle) {
+    public ExtentReport withReportTitle(String reportTitle) {
         this.reportTitle = reportTitle;
         return this;
     }
