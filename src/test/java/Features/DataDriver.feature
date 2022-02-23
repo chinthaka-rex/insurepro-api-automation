@@ -4,7 +4,7 @@ Feature: Data Driver test 1
     Given url 'https://api.instantwebtools.net/v1/'
 
   @smoke
-  Scenario Outline: Create an user using csv
+  Scenario Outline: Create an user using csv row : <id>
     And path 'passenger'
     And request {"name": <name>,"trips": <trips>,"airline": <airline>}
     When method POST

@@ -65,7 +65,7 @@ public class ExtentReportGen {
                 String featureDesc = getFeatureDesc(scenarioResult);
                 ExtentTest featureNode = createFeatureNode(featureName, featureDesc);
                 // 6. Using the same scenario object, we will get the info about the scenario
-                String scenarioTitle = getSecnarioTitle(scenarioResult);
+                String scenarioTitle = getScenarioTitle(scenarioResult);
                 ExtentTest scenarioNode = createScenarioNode(featureNode, scenarioTitle);
                 // 7. Using the Scenario Result get the list of step result
                 // 8. loop over the step result list, get the info about scenario step and its
@@ -118,9 +118,8 @@ public class ExtentReportGen {
         return scenarioNode;
     }
 
-    private String getSecnarioTitle(ScenarioResult scenarioResult) {
+    private String getScenarioTitle(ScenarioResult scenarioResult) {
         return scenarioResult.getScenario().getName();
-
     }
 
     private void addScenarioStep(ExtentTest scenarioNode, Step step, Result stepResult) {
