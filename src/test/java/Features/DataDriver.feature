@@ -17,7 +17,8 @@ Feature: Data Driver test 1
     Then status 200
     Then print '\n G Response : \n',response
     Then match response._id == result._id
-    And match response.name == result.name
+    And match response.name == "<name>"
+    And match response.trips == <trips>
 
     Examples:
       | read('file:testdata/combinations.csv') |
