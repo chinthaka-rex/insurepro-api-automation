@@ -18,10 +18,10 @@ import com.intuit.karate.core.ScenarioResult;
 import com.intuit.karate.core.Step;
 
 public class ExtentReport {
-    private ExtentReports extentReports;
+    private final ExtentReports extentReports;
     private ExtentSparkReporter extentSparkReporter;
     private String reportDir;
-    private String reportTitle = "Karate Test Execution Report";
+    private String reportTitle;
     private Results testResults;
     private ExtentTest featureNode;
     private String featureTitle = "";

@@ -6,7 +6,6 @@ import com.intuit.karate.Runner;
 import org.junit.Test;
 import util.ConfigReader;
 import util.CreateZip;
-import util.DeleteFiles;
 import util.ExtentReport;
 
 import java.io.IOException;
@@ -30,19 +29,16 @@ public class TestRunner {
 
     public void generateExtentReport(Results result) {
         CreateZip createZip = new CreateZip();
-        createZip.zipDirectory(prop.getProperty("zip_in"));
+        createZip.zipDirectory(prop.getProperty("report_out"));
 
         ExtentReport extentReport = new ExtentReport()
                 .withKarateResult(result)
-                .withReportDir("reports")
+                .withReportDir(prop.getProperty("report_out"))
                 .withReportTitle(prop.getProperty("extent_report_title"));
         extentReport.generateExtentReport();
 
-        DeleteFiles deleteFiles = new DeleteFiles();
-        deleteFiles.deleteThisFiles(prop.getProperty("zip_in"), ".zip");
-
         try {
-            createZip.zipTheFile(prop.getProperty("zip_in"), prop.getProperty("zip_out"));
+            createZip.zipTheFile(prop.getProperty("report_out"), prop.getProperty("zip_out"));
         } catch (IOException e) {
             e.printStackTrace();
         }
