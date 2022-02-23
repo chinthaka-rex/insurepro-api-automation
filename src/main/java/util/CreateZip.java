@@ -14,7 +14,7 @@ public class CreateZip {
         File pathAsFile = new File(outputDir);
 
         if (!Files.exists(Paths.get(outputDir))) {
-            pathAsFile.mkdir();
+            pathAsFile.mkdirs();
         }
     }
 
