@@ -3,7 +3,7 @@ Feature: Get Json from API
   Background:
     Given url 'https://reqres.in/api/'
 
-  #@smoke
+  @smoke
   Scenario: Get single a user
     And path 'users/2'
     When method GET
@@ -11,7 +11,7 @@ Feature: Get Json from API
     Then match response.data.last_name == "Weaver"
     Then print response.data.last_name
 
-  #@smoke
+  @smoke
   Scenario Outline: Create an user
     And path 'api/users'
     When request {"name": <name>,"job": <job>}
