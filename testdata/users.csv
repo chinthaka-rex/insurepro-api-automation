@@ -1,0 +1,4 @@
+id,legalName,email,phone,dob,zip,gender,address,apartmentNo,exprience,jobType,JobsPerMonth,claim
+1,INS4,chin4@teck.com,+94774190017,01-01-1998,79601,1,Kotawila Junction,Chinthana Building,10,House cleaning,30,true
+2,INS5,chin5@teck.com,+94774190017,01-01-1998,79601,1,Kotawila Junction,Chinthana Building,10,House cleaning,30,true
+3,INS6,chin6@teck.com,+94774190017,01-01-1998,79601,1,Kotawila Junction,Chinthana Building,10,House cleaning,30,true

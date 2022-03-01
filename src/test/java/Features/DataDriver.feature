@@ -3,7 +3,7 @@ Feature: Data Driver test 1
   Background:
     Given url 'https://api.instantwebtools.net/v1/'
 
-  @smoke
+  #@smoke
   Scenario Outline: Create an user using csv row : <id>
     And path 'passenger'
     And request {"name": <name>,"trips": <trips>,"airline": <airline>}
