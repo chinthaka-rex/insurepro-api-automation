@@ -12,8 +12,8 @@ import java.io.IOException;
 import java.util.Properties;
 
 @KarateOptions(
-        tags = "@smoke",
-        features = "classpath:Features"
+        //tags = "@smoke",
+        features = "classpath:Features/AddUsers.feature"
 )
 public class TestRunner {
     Properties prop;
